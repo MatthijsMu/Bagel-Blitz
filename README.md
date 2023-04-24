@@ -1,2 +1,2 @@
 # Bagel-Blitz
-chess GUI using UCI connection.
+Chess GUI using UCI connection.
