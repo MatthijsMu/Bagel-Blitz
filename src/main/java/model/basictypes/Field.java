@@ -1,50 +1,50 @@
 package model.basictypes;
 
 public class Field {
-    private int file;
-    private int rank;
+    private int X;
+    private int Y;
 
     public Field() {
-        this.file = -1;
-        this.rank = -1;
+        this.X = -1;
+        this.Y = -1;
     }
 
-    public Field(int file, int rank) {
-        if (file < 0 || file > 7 || rank < 0 || rank > 7) {
-            throw new IllegalArgumentException("file and rank must be between 0 and 7");
+    public Field(int X, int Y) {
+        if (X < 0 || X > 7 || Y < 0 || Y > 7) {
+            throw new IllegalArgumentException("X and Y must be between 0 and 7");
         }
-        this.file = file;
-        this.rank = rank;
+        this.X = X;
+        this.Y = Y;
     }
 
     public boolean isValid() {
-        return file >= 0 || file <= 7 || rank >= 0 || rank <= 7;
+        return X >= 0 || X <= 7 || Y >= 0 || Y <= 7;
     }
 
-    public int getfile() {
+    public int getX() {
         if (!isValid()) {
-            throw new IllegalStateException("Invalid field has no file");
+            throw new IllegalStateException("Invalid field has no X");
         }
-        return this.file;
+        return this.X;
     }
 
-    public int getRank() {
+    public int getY() {
         if (!isValid()) {
-            throw new IllegalStateException("Invalid field has no rank");
+            throw new IllegalStateException("Invalid field has no Y");
         }
-        return this.rank;
+        return this.Y;
     }
 
     public Field shift(Direction direction) {
         if(!isValid()) {
-            throw new IllegalStateException("Invalid field cannot be shifted")
+            throw new IllegalStateException("Invalid field cannot be shifted");
         }
-        int newFile = this.file + direction.getdFile();
-        int newRank = this.rank + direction.getdRank();
-        if (file < 0 || file > 7 || rank < 0 || rank > 7) {
+        int newX = this.X + direction.getdX();
+        int newY = this.Y + direction.getdY();
+        if (X < 0 || X > 7 || Y < 0 || Y > 7) {
             return new Field();
         }
-        else return new Field(newFile, newRank);
+        else return new Field(newX, newY);
     }
 }
 
