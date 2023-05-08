@@ -1,4 +1,6 @@
-package model;
+package model.clock;
+
+import model.basictypes.Colour;
 
 public interface Clock {
     public SimpleIntegerProperty getWhiteTimeProperty();

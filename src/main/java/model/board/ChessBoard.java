@@ -1,5 +1,11 @@
-package model;
+package model.board;
 
+import model.basictypes.Colour;
+import model.basictypes.Direction;
+import model.basictypes.Field;
+import model.basictypes.MoveType;
+import model.basictypes.Piece;
+import model.basictypes.PieceType;
 
 public class ChessBoard implements Board {
     public static final int ROW_SIZE = 8;

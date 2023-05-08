@@ -2,6 +2,10 @@ package model;
 
 import java.util.Stack;
 
+import model.basictypes.Colour;
+import model.basictypes.Move;
+import model.board.Board;
+
 public class ChessWorld {
     
     
@@ -29,7 +33,7 @@ public class ChessWorld {
     }
 
 
-    public World() {
+    public World(Board board, Clock clock) {
         board 
     }
 }

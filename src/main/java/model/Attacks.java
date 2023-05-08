@@ -3,12 +3,19 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.basictypes.Colour;
+import model.basictypes.Direction;
+import model.basictypes.Field;
+import model.basictypes.Piece;
+import model.basictypes.PieceType;
+import model.board.Board;
+
 public class Attacks {
 
     public static List<Field> rayAttack(Colour colour, Field field, Board board, Direction direction) {
         List<Field> fields = new ArrayList<>();
-        for (Field f = field.shift(direction); board.getPiece(f) == Piece.EMPTY
-                || board.getPiece(f).getColour() != colour; f = f.shift(direction)) {
+        for (Field f = field.shift(direction); f.isValid() && (board.getPiece(f) == Piece.EMPTY
+                || board.getPiece(f).getColour() != colour; f = f.shift(direction))) {
             fields.add(0,f);
             if (board.getPiece(f) != Piece.EMPTY)
                 break;

@@ -1,4 +1,4 @@
-package model;
+package model.basictypes;
 
 public class Field {
     private int file;

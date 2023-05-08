@@ -1,6 +1,10 @@
-package model;
+package model.board;
 
 import java.util.List;
+
+import model.basictypes.Field;
+import model.basictypes.Move;
+import model.basictypes.Piece;
 
 public interface Board {
     public interface MoveListener {
